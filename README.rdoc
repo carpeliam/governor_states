@@ -15,9 +15,10 @@ a draft, published, or hidden, using an underlying state machine.
 
 == Setting up
 
-First, install the above dependencies. Then, in your Gemfile, add the
-following:
+In your Gemfile, add the following:
 
+    gem 'governor'
+    gem 'state_machine'
     gem 'governor_states'
 
 Once you've installed the gem into your app, you need to run the generator:
