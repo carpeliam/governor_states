@@ -1,6 +1,33 @@
 = governor_states
 
-Description goes here.
+<b>Governor[https://carpeliam.github.com/governor/]</b> (named after Rod
+Blagojevich) is the pluggable blogging platform for Rails, built for people
+who want to build their blog into their website, not build their website into
+their blog.
+
+*governor_states* is a plugin for Governor, allowing you to mark articles as
+a draft, published, or hidden, using an underlying state machine.
+
+== Dependencies
+
+* Governor[https://carpeliam.github.com/governor/]
+* state_machine[https://github.com/pluginaweek/state_machine]
+
+== Setting up
+
+First, install the above dependencies. Then, in your Gemfile, add the
+following:
+
+    gem 'governor_states'
+
+Once you've installed the gem into your app, you need to run the generator:
+
+    rails generate governor:add_state [RESOURCE]
+
+This will add a migration for adding a state column to your article table.
+
+At this point, any existing articles will be marked as drafts, so you'll have
+to manually choose which articles to publish.
 
 == Contributing to governor_states
  

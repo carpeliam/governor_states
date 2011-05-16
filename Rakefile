@@ -15,9 +15,9 @@ Jeweler::Tasks.new do |gem|
   gem.name = "governor_states"
   gem.homepage = "http://github.com/carpeliam/governor_states"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "lmorley@mitre.org"
+  gem.summary = %Q{Adds state machine support to the Governor blogging engine.}
+  gem.description = %Q{Adds state machine support to Governor, the Rails 3-based blogging engine, enabling you to draft/publish/hide articles.}
+  gem.email = "liam@carpeliam.com"
   gem.authors = ["Liam Morley"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
