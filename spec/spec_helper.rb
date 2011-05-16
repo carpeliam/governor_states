@@ -1,12 +1,19 @@
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'rspec'
-require 'governor_states'
+ENV['RAILS_ENV'] ||= 'test'
 
-# Requires supporting files with custom matchers and macros, etc,
-# in ./support/ and its subdirectories.
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+require File.expand_path('../rails_app/config/environment.rb',  __FILE__)
+
+require 'bundler'
+Bundler.setup
+
+require 'rspec'
+require 'rspec/rails'
+
+Dir[Rails.root.join('spec/support/**/*.rb')].each {|f| require f}
+
+ActiveRecord::Migrator.migrate File.expand_path('../rails_app/db/migrate/', __FILE__)
 
 RSpec.configure do |config|
+  config.mock_with :mocha
   
+  config.use_transactional_fixtures = true
 end
